@@ -19,7 +19,7 @@ public interface Fibonacci {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Fibonacci f = new FibonacciMemoization();
         f.measure();
     }

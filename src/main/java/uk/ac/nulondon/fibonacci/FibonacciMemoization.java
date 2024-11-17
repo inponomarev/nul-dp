@@ -1,17 +1,22 @@
 package uk.ac.nulondon.fibonacci;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FibonacciMemoization implements Fibonacci {
     @Override
     public long calculate(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Negative parameter");
-        } else if (n <= 1) return n;
-        return calculate(n, 0, 1, 0);
+        Map<Integer, Long> memo = new HashMap<>();
+        memo.put(0, 0L);
+        memo.put(1, 1L);
+        return calculate(n, memo);
     }
 
-    private long calculate(long n, int m1, int m2, int mStart) {
-        if (n == mStart)
-            return m1;
-        return calculate(n, m2, m1 + m2, mStart + 1);
+    /* Memo: m1, m2 are 2 previous values */
+    private long calculate(int n, Map<Integer, Long> memo) {
+        if (!memo.containsKey(n)) {
+            memo.put(n, calculate(n - 1, memo) + calculate(n - 2, memo));
+        }
+        return memo.get(n);
     }
 }

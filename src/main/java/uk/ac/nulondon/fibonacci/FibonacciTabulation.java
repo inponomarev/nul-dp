@@ -4,21 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FibonacciTabulation implements Fibonacci {
-    private final Map<Integer, Long> table = new HashMap<>();
+
 
     @Override
     public long calculate(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Negative parameter");
-        } else if (n <= 1) return n;
-
-
-        if (table.containsKey(n))
-            return table.get(n);
-
-        long result = calculate(n - 1) + calculate(n - 2);
-
-        table.put(n, result);
-        return result;
+        Map<Integer, Long> table = new HashMap<>();
+        table.put(0, 0L);
+        table.put(1, 1L);
+        for (int i = 2; i <= n; i++) {
+            table.put(i, table.get(i - 1) + table.get(i - 2));
+        }
+        return table.get(n);
     }
 }
