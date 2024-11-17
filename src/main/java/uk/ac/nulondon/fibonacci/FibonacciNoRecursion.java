@@ -1,6 +1,6 @@
 package uk.ac.nulondon.fibonacci;
 
-public class FibonacciBottomToTop implements Fibonacci {
+public class FibonacciNoRecursion implements Fibonacci {
     @Override
     public long calculate(int n) {
         if (n < 0) {

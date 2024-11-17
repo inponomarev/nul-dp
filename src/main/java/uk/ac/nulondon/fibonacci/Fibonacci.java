@@ -20,7 +20,7 @@ public interface Fibonacci {
     }
 
     public static void main(String[] args) {
-        Fibonacci f = new FibonacciBottomToTop();
-        f.first10();
+        Fibonacci f = new FibonacciMemoization();
+        f.measure();
     }
 }

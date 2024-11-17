@@ -3,8 +3,8 @@ package uk.ac.nulondon.fibonacci;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FibonacciCached implements Fibonacci {
-    private final Map<Integer, Long> memo = new HashMap<>();
+public class FibonacciTabulation implements Fibonacci {
+    private final Map<Integer, Long> table = new HashMap<>();
 
     @Override
     public long calculate(int n) {
@@ -13,12 +13,12 @@ public class FibonacciCached implements Fibonacci {
         } else if (n <= 1) return n;
 
 
-        if (memo.containsKey(n))
-            return memo.get(n);
+        if (table.containsKey(n))
+            return table.get(n);
 
         long result = calculate(n - 1) + calculate(n - 2);
 
-        memo.put(n, result);
+        table.put(n, result);
         return result;
     }
 }

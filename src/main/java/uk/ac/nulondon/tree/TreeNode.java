@@ -40,7 +40,7 @@ public class TreeNode {
     public Integer floor(int i) {
         if (i == value)
             return i;
-        //value cannot be "floor" for i
+        //valueDensity cannot be "floor" for i
         if (value > i) {
             if (left == null) {
                 return null;

@@ -20,7 +20,7 @@ public class KnapsackSolver {
                         new Item(50, 40)
                 );
 
-        List<Item> solution = solve(items, 50);
+        List<Item> solution = solve(items, 60);
 
         System.out.println(solution);
     }

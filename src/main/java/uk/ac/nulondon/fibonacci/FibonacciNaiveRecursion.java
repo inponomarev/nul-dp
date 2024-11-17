@@ -1,6 +1,6 @@
 package uk.ac.nulondon.fibonacci;
 
-public class FibonacciNaive implements Fibonacci {
+public class FibonacciNaiveRecursion implements Fibonacci {
 
     @Override
     public long calculate(int n) {
