@@ -21,6 +21,7 @@ public interface Fibonacci {
 
     static void main(String[] args) {
         Fibonacci f = new FibonacciMemoization();
+        f.first10();
         f.measure();
     }
 }

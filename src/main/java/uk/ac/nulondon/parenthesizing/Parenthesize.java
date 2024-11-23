@@ -14,6 +14,11 @@ public class Parenthesize {
             System.out.println(s);
         }
         System.out.printf("Total %d combinations%n", res.size());
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("P(%d)=%d%n",
+                    i, parenthesize(i).size());
+        }
     }
 
     public static List<String> parenthesize(int n) {

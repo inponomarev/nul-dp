@@ -19,9 +19,9 @@ public class MatrixMultiplication {
         //Optimal splits
         Map<Map.Entry<Integer, Integer>, Integer> S = new HashMap<>();
 
-        for (int d = 1; d < n; d++) {
-            for (int i = d + 1; i <= n; i++) {
-                int j = n + d + 1 - i;
+        for (int d = 2; d < n; d++) {
+            for (int i = d; i <= n; i++) {
+                int j = n + d - i;
                 int minC = Integer.MAX_VALUE;
                 for (int k = i; k < j; k++) {
                     int c = C.get(Map.entry(i, k)) +

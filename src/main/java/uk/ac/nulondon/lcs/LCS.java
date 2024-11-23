@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class LCS {
     public static void main(String[] args) {
-        String x = "abbcdddeefff"; //"BACA";
-        String y = "bccccddeeeefg"; //"ABCBA";
+        String x = "BACA";
+        String y = "ABCBA";
         int m = x.length();
         int n = y.length();
 
@@ -25,6 +25,10 @@ public class LCS {
                     S[i][j] = 'L';
                 }
             }
+        for (int i = 0; i < C.length; i++) {
+            System.out.println(Arrays.toString(C[i]));
+            System.out.println(Arrays.toString(S[i]));
+        }
         System.out.println(trace(x, S, m, n));
     }
 
